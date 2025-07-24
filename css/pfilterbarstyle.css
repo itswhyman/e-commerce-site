@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.filter-body * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.filter-body {
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  background-color: #fff;
+  position: relative; /* Filtre menüsünün konum alacağı referans */
+}
+
+.filter-body-yatay-menu {
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 15px;
+}
+
+.filter-yatay {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  white-space: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.filter-yatay::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-yatay i {
+  font-size: 20px;
+  color: #000;
+  padding: 6px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.filter-yatay i:hover {
+  background-color: #000;
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+.filter-yatay i:first-child {
+  margin-right: auto;
+}
+
+.filter-yatay i:last-child {
+  margin-left: auto;
+}
+
+/* ... diğer CSS kuralların (filter-menu, color-options, sort-wrapper, vs) aynı kalabilir */
+
+
+    /* Filtre menüsü */
+    .filter-menu {
+  position: absolute; /* Ekle */
+  top: 60px;           /* Üstten boşluk, gerekirse ayarla */
+  left: 15px;          /* Soldan boşluk, gerekirse ayarla */
+  z-index: 999;        /* Diğer içeriklerin üzerinde dursun */
+  
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #f6f6f6;
+  padding: 20px 25px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  max-width: 320px;
+
+  animation: slideDown 0.3s ease;
+}
+    .filter-menu h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #222;
+    }
+    .filter-menu label {
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+    }
+    .filter-menu select,
+    .filter-menu input[type="number"] {
+      width: 100%;
+      padding: 8px 12px;
+      font-size: 14px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+    .filter-menu select:focus,
+    .filter-menu input[type="number"]:focus {
+      border-color: #000;
+    }
+
+    .color-options {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+    .color-dot {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: border-color 0.3s ease;
+      display: inline-block;
+    }
+    .color-dot.active {
+      border-color: #000;
+      transform: scale(1.1);
+    }
+    
+    .filter-buttons-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .filter-buttons-row button {
+      flex: 1;
+      padding: 10px 0;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    #applyFilterBtn {
+      background-color: #000;
+      color: white;
+    }
+    #applyFilterBtn:hover {
+      background-color: #444;
+    }
+    #resetFilters {
+      background-color: #ddd;
+      color: #000;
+    }
+    #resetFilters:hover {
+      background-color: #bbb;
+    }
+
+    /* Sıralama menüsü */
+    .sort-menu label{
+        font-size: 20px;
+        font-weight: bold;
+        top: 5px;
+        background-color: #b1afaf;
+        border-bottom-left-radius: 10px;
+        border-top-right-radius: 10px;
+        text-align: center;
+        width: 100%;
+        height: 40px;
+        padding-top: 5px;
+    }
+    .sort-wrapper {
+      
+      position: relative;
+        }
+        .sort-menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start; /* Üstten başlar içerik */
+      align-items: center;
+      height: 180px; /* Kutunun yüksekliği */
+      padding: 15px 20px;
+      position: absolute;
+      top: 110%;
+      right: 10px;
+      z-index: 999;
+      background-color: #f6f6f6;
+      border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+      animation: slideDown 0.5s ease;
+    }
+
+
+    .sort-button {
+      margin-top: auto; /* Boşluk bırak, butonu alta iter */
+      width: 150px;
+      
+      font-weight: 600;
+      font-family: 'Montserrat', sans-serif;
+      cursor: pointer;
+      background-color: #000;
+      color: #fff;
+   
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+       border-bottom-left-radius: 10px;
+            border-top-right-radius: 10px;
+    }
+
+    .sort-button:hover {
+      background-color: #444;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    }
+
+    .sort-menu select {
+        display: block;      /* Blok eleman yap */
+        margin-top: 20px;      /* Ortala yatayda */
+        width: 180px;        /* İstediğin genişlik */
+        height: 36px;
+        font-weight: bold;
+        border-bottom-left-radius: 10px;
+        border-top-right-radius: 10px;
+        
+        font-size: 14px;
+        text-align-last: center; /* Seçenek yazısını ortalar */
+        padding-left: 8px;
+        cursor: pointer;
+        
+    }
+.sort-menu select:hover{
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    transition: 0.5s;
+}
+    
+.sort-button:hover {
+  background-color: #444;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+.sort-button i {
+  font-size: 16px;
+  border: none;
+}
+.filter-icon-button {
+   width: 100%;    
+   height: 35px;      /* Tüm genişlik */
+  margin-top: auto;     /* Üstte boşluk bırak */
+  padding: 10px 0;
+  font-size: 16px;       /* Yazı büyüklüğü */
+  font-weight: bold; 
+  
+  display: flex;              /* Flexbox aktif */
+  align-items: center;        /* Dikey ortalama */
+  justify-content: center;    /* Yatay ortalama */
+  border-bottom-left-radius: 10px;
+        border-top-right-radius: 10px;
+}
+.filter-icon-button:hover {
+  background-color: #acacac;
+  color: #000000;
+  transition: 0.7s;
+  transform: scale(1.01);
+}
+    @keyframes slideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }

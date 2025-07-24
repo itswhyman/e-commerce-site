@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Detaylı Ürün Filtreleme</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f4f8;
+    }
+    header {
+      background-color: #1e2a38;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    main {
+      display: flex;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 20px;
+      gap: 20px;
+    }
+    .sidebar {
+      width: 300px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .sidebar .filter-group label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;
+    }
+    .sidebar select, .sidebar input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    .checkbox-list {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: #fafafa;
+      padding: 10px;
+      max-height: 130px;
+      overflow-y: auto;
+    }
+    .checkbox-list label {
+      display: flex;
+      align-items: center;
+      font-weight: normal;
+      margin-bottom: 6px;
+      cursor: pointer;
+    }
+    .checkbox-list input {
+      margin-right: 8px;
+    }
+    .sidebar button {
+      padding: 12px;
+      font-size: 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #filter-btn {
+      background-color: #007bff;
+      color: white;
+    }
+    #reset-btn {
+      background-color: #6c757d;
+      color: white;
+    }
+    .product-list {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .product-card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 15px;
+    }
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .product-card h3 {
+      margin: 10px 0 5px;
+    }
+    .product-card p {
+      margin: 0 0 8px;
+      font-size: 14px;
+    }
+    .product-card .price {
+      font-size: 18px;
+      font-weight: bold;
+      color: green;
+    }
+    .product-card .price-old {
+      text-decoration: line-through;
+      color: #888;
+      font-size: 14px;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Detaylı Ürün Filtreleme</h1>
+  </header>
+  <main>
+    <div class="sidebar">
+      <div class="filter-group">
+        <label for="category">Kategori</label>
+        <select id="category"></select>
+      </div>
+      <div class="filter-group">
+        <label for="subcategory">Alt Kategori</label>
+        <select id="subcategory" disabled></select>
+      </div>
+      <div class="filter-group">
+        <label>Renk</label>
+        <div class="checkbox-list" id="colors"></div>
+      </div>
+      <div class="filter-group">
+        <label>Beden</label>
+        <div class="checkbox-list" id="sizes"></div>
+      </div>
+      <div class="filter-group">
+        <label>Min Fiyat</label>
+        <input type="number" id="price-min">
+      </div>
+      <div class="filter-group">
+        <label>Maks Fiyat</label>
+        <input type="number" id="price-max">
+      </div>
+      <div class="filter-group">
+        <label>Min Değerlendirme</label>
+        <input type="number" id="rating-min" step="0.1" min="0" max="5">
+      </div>
+      <button id="filter-btn">Filtrele</button>
+      <button id="reset-btn">Temizle</button>
+    </div>
+
+    <div class="product-list" id="product-list"></div>
+  </main>
+
+<script>
+// Buraya ürünleri, filtreleme fonksiyonlarını ve DOM işlemlerini ekleyeceğim.
+// İsteğin doğrultusunda daha fazla özellik de dahil edebilirim.
+</script>
+
+</body>
+</html>

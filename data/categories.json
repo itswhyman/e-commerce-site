@@ -1,0 +1,398 @@
+[
+  {
+    "id": 1,
+    "name": "Men",
+    "subcategories": [
+      {
+        "id": 101,
+        "name": "T-Shirt",
+        "subsubcategories": ["Basic", "Oversize", "V Yaka", "Yuvarlak Yaka", "Polo Yaka"]
+      },
+      {
+        "id": 102,
+        "name": "Gömlek",
+        "subsubcategories": ["Slim Fit", "Regular Fit", "Desenli", "Klasik"]
+      },
+      {
+        "id": 103,
+        "name": "Sweatshirt / Hoodie",
+        "subsubcategories": ["Kapüşonlu", "Kapüşonsuz", "Oversize"]
+      },
+      {
+        "id": 104,
+        "name": "Pantolon",
+        "subsubcategories": ["Kargo", "Kot", "Chino", "Eşofman"]
+      },
+      {
+        "id": 105,
+        "name": "Şort",
+        "subsubcategories": ["Jean", "Keten", "Eşofman"]
+      },
+      {
+        "id": 106,
+        "name": "İç Giyim",
+        "subsubcategories": ["Boxer", "Slip", "Atlet"]
+      },
+      {
+        "id": 107,
+        "name": "Takım Elbise",
+        "subsubcategories": ["Ceket", "Pantolon", "Yelek"]
+      },
+      {
+        "id": 108,
+        "name": "Ayakkabı",
+        "subsubcategories": ["Spor Ayakkabı", "Klasik", "Bot", "Mokasen"]
+      },
+      {
+        "id": 109,
+        "name": "Aksesuar",
+        "subsubcategories": ["Şapka", "Kemer", "Saat", "Gözlük"]
+      },
+      {
+        "id": 110,
+        "name": "Spor Giyim",
+        "subsubcategories": ["Eşofman", "Forma", "Koşu Ayakkabısı"]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Women",
+    "subcategories": [
+      {
+        "id": 201,
+        "name": "Elbise",
+        "subsubcategories": ["Günlük", "Gece", "Yazlık", "Kışlık"]
+      },
+      {
+        "id": 202,
+        "name": "Tunik / Bluz",
+        "subsubcategories": ["Uzun Kollu", "Kısa Kollu", "Askılı"]
+      },
+      {
+        "id": 203,
+        "name": "Gömlek",
+        "subsubcategories": ["Desenli", "Düz", "İpek"]
+      },
+      {
+        "id": 204,
+        "name": "Sweatshirt / Hoodie",
+        "subsubcategories": ["Kapüşonlu", "Kapüşonsuz"]
+      },
+      {
+        "id": 205,
+        "name": "Ceket / Mont",
+        "subsubcategories": ["Deri", "Kot", "Kışlık", "Mevsimlik"]
+      },
+      {
+        "id": 206,
+        "name": "Etek",
+        "subsubcategories": ["Mini", "Midi", "Maksi"]
+      },
+      {
+        "id": 207,
+        "name": "Pantolon / Tayt",
+        "subsubcategories": ["Kot", "Derin Bel", "Yüksek Bel", "Spor"]
+      },
+      {
+        "id": 208,
+        "name": "İç Giyim",
+        "subsubcategories": ["Sütyen", "Külot", "Gecelik"]
+      },
+      {
+        "id": 209,
+        "name": "Tesettür Giyim",
+        "subsubcategories": ["Elbise", "Tunik", "Eşarp"]
+      },
+      {
+        "id": 210,
+        "name": "Büyük Beden",
+        "subsubcategories": ["Elbise", "Pantolon", "Bluz"]
+      },
+      {
+        "id": 211,
+        "name": "Aksesuar",
+        "subsubcategories": ["Çanta", "Şapka", "Takı"]
+      },
+      {
+        "id": 212,
+        "name": "Spor Giyim",
+        "subsubcategories": ["Eşofman", "Spor Sütyeni", "Koşu Ayakkabısı"]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Mom & Child",
+    "subcategories": [
+      {
+        "id": 301,
+        "name": "Bebek Giyim (0-24 ay)",
+        "subsubcategories": ["Body", "Tulüm", "Şapka", "Çorap"]
+      },
+      {
+        "id": 302,
+        "name": "Çocuk Giyim (2-14 yaş)",
+        "subsubcategories": ["T-Shirt", "Pantolon", "Elbise", "Mont"]
+      },
+      {
+        "id": 303,
+        "name": "Bebek Bakım Ürünleri",
+        "subsubcategories": ["Bebek Bezi", "Islak Mendil", "Losyon", "Şampuan"]
+      },
+      {
+        "id": 304,
+        "name": "Hamile Giyim",
+        "subsubcategories": ["Elbise", "Pantolon", "Tunik"]
+      },
+      {
+        "id": 305,
+        "name": "Oyuncaklar",
+        "subsubcategories": ["Eğitici", "Peluş", "Ahşap", "Araçlar"]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Home & Furniture",
+    "subcategories": [
+      {
+        "id": 401,
+        "name": "Mobilya",
+        "subsubcategories": ["Koltuk Takımı", "Yemek Masası", "Yatak", "Ofis Mobilyası"]
+      },
+      {
+        "id": 402,
+        "name": "Ev Tekstili",
+        "subsubcategories": ["Perde", "Halı", "Nevresim Takımı", "Yastık"]
+      },
+      {
+        "id": 403,
+        "name": "Dekorasyon",
+        "subsubcategories": ["Duvar Süsleri", "Vazolar", "Tablolar", "Aynalar"]
+      },
+      {
+        "id": 404,
+        "name": "Aydınlatma",
+        "subsubcategories": ["Avize", "Abajur", "Lambader", "Spot"]
+      },
+      {
+        "id": 405,
+        "name": "Mutfak Gereçleri",
+        "subsubcategories": ["Tencere Seti", "Bıçak Seti", "Çatal Kaşık Takımı", "Mutfak Aletleri"]
+      },
+      {
+        "id": 406,
+        "name": "Banyo Ürünleri",
+        "subsubcategories": ["Havlu", "Banyo Halısı", "Duş Perdesi", "Sabunluk"]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Supermarket",
+    "subcategories": [
+      {
+        "id": 501,
+        "name": "Gıda",
+        "subsubcategories": ["Bakliyat", "Çerez", "Konserve", "Atıştırmalık"]
+      },
+      {
+        "id": 502,
+        "name": "Temizlik Ürünleri",
+        "subsubcategories": ["Çamaşır Deterjanı", "Bulaşık Deterjanı", "Yer Temizleyici", "Mikrofiber Bez"]
+      },
+      {
+        "id": 503,
+        "name": "Kişisel Bakım",
+        "subsubcategories": ["Şampuan", "Duş Jeli", "Deodorant", "Diş Macunu"]
+      },
+      {
+        "id": 504,
+        "name": "Evcil Hayvan Ürünleri",
+        "subsubcategories": ["Mama", "Kum", "Oyuncak", "Taşıma Çantası"]
+      },
+      {
+        "id": 505,
+        "name": "Bebek Ürünleri",
+        "subsubcategories": ["Bebek Maması", "Biberon", "Emzik", "Bebek Arabası"]
+      },
+      {
+        "id": 506,
+        "name": "Organik Ürünler",
+        "subsubcategories": ["Organik Sebze", "Organik Meyve", "Organik Bakliyat"]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Cosmetics",
+    "subcategories": [
+      {
+        "id": 601,
+        "name": "Cilt Bakımı",
+        "subsubcategories": ["Nemlendirici", "Güneş Kremi", "Serum", "Peeling"]
+      },
+      {
+        "id": 602,
+        "name": "Makyaj",
+        "subsubcategories": ["Ruj", "Fondöten", "Maskara", "Allık"]
+      },
+      {
+        "id": 603,
+        "name": "Saç Bakımı",
+        "subsubcategories": ["Şampuan", "Saç Kremi", "Saç Maskesi", "Saç Spreyi"]
+      },
+      {
+        "id": 604,
+        "name": "Parfüm",
+        "subsubcategories": ["Kadın Parfümü", "Erkek Parfümü", "Unisex"]
+      },
+      {
+        "id": 605,
+        "name": "Erkek Bakım",
+        "subsubcategories": ["Tıraş Ürünleri", "Parfüm", "Cilt Bakımı"]
+      },
+      {
+        "id": 606,
+        "name": "Aletler",
+        "subsubcategories": ["Saç Kurutma Makinesi", "Düzleştirici", "Epilatör"]
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Bags",
+    "subcategories": [
+      {
+        "id": 701,
+        "name": "Kadın Çanta",
+        "subsubcategories": ["Omuz Çantası", "El Çantası", "Sırt Çantası"]
+      },
+      {
+        "id": 702,
+        "name": "Erkek Çanta",
+        "subsubcategories": ["Sırt Çantası", "Laptop Çantası", "Postacı Çantası"]
+      },
+      {
+        "id": 703,
+        "name": "Seyahat / Valiz",
+        "subsubcategories": ["Kabine Uygun", "Büyük Boy", "Orta Boy"]
+      },
+      {
+        "id": 704,
+        "name": "Cüzdan / Kartlık",
+        "subsubcategories": ["Deri", "Kumaş", "Metal"]
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Shoes",
+    "subcategories": [
+      {
+        "id": 801,
+        "name": "Kadın Ayakkabı",
+        "subsubcategories": ["Topuklu", "Düz Taban", "Spor", "Bot"]
+      },
+      {
+        "id": 802,
+        "name": "Erkek Ayakkabı",
+        "subsubcategories": ["Klasik", "Spor", "Bot"]
+      },
+      {
+        "id": 803,
+        "name": "Çocuk Ayakkabısı",
+        "subsubcategories": ["Spor", "Okul", "Günlük"]
+      },
+      {
+        "id": 804,
+        "name": "Outdoor Ayakkabı",
+        "subsubcategories": ["Trekking", "Koşu", "Su Geçirmez"]
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Electronics",
+    "subcategories": [
+      {
+        "id": 901,
+        "name": "Telefon & Aksesuar",
+        "subsubcategories": ["Telefon", "Kılıf", "Şarj Cihazı", "Kulaklık"]
+      },
+      {
+        "id": 902,
+        "name": "Bilgisayar & Tablet",
+        "subsubcategories": ["Dizüstü", "Masaüstü", "Tablet", "Monitör"]
+      },
+      {
+        "id": 903,
+        "name": "TV & Ses Sistemleri",
+        "subsubcategories": ["Televizyon", "Soundbar", "Hoparlör"]
+      },
+      {
+        "id": 904,
+        "name": "Akıllı Ev Sistemleri",
+        "subsubcategories": ["Güvenlik Kamerası", "Akıllı Ampul", "Akıllı Priz"]
+      },
+      {
+        "id": 905,
+        "name": "Beyaz Eşya",
+        "subsubcategories": ["Buzdolabı", "Çamaşır Makinesi", "Bulaşık Makinesi"]
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Sports & Outdoor",
+    "subcategories": [
+      {
+        "id": 1001,
+        "name": "Fitness",
+        "subsubcategories": ["Mat", "Ağırlık", "Giysi", "Aksesuar"]
+      },
+      {
+        "id": 1002,
+        "name": "Kamp",
+        "subsubcategories": ["Çadır", "Uyku Tulumu", "Aydınlatma", "Sırt Çantası"]
+      },
+      {
+        "id": 1003,
+        "name": "Bisiklet",
+        "subsubcategories": ["Dağ Bisikleti", "Yol Bisikleti", "Aksesuarlar"]
+      },
+      {
+        "id": 1004,
+        "name": "Outdoor Giyim",
+        "subsubcategories": ["Ceket", "Pantolon", "Ayakkabı"]
+      },
+      {
+        "id": 1005,
+        "name": "Top Sporları",
+        "subsubcategories": ["Futbol", "Basketbol", "Voleybol"]
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Books, Stationery & Hobby",
+    "subcategories": [
+      {
+        "id": 1101,
+        "name": "Kitap",
+        "subsubcategories": ["Roman", "Çocuk Kitapları", "Akademik", "Hobi"]
+      },
+      {
+        "id": 1102,
+        "name": "Kırtasiye",
+        "subsubcategories": ["Defter", "Kalem", "Dosya", "Ajanda"]
+      },
+      {
+        "id": 1103,
+        "name": "Hobi & Oyuncak",
+        "subsubcategories": ["Puzzle", "Model Araçlar", "Maket", "Boyama"]
+      }
+    ]
+  }
+]

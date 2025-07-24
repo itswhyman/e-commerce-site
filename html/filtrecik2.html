@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ürün Filtreleme Sistemi</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .filter-panel {
+      max-width: 280px;
+    }
+    .product-card {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 16px;
+      background-color: #fff;
+    }
+    .product-card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    .price-old {
+      text-decoration: line-through;
+      color: #999;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="col-md-3 filter-panel">
+      <h4>Filtreler</h4>
+      <form id="filterForm">
+        <div class="mb-3">
+          <label for="category" class="form-label">Kategori</label>
+          <select id="category" name="category" class="form-select"></select>
+        </div>
+        <div class="mb-3">
+          <label for="subcategory" class="form-label">Alt Kategori</label>
+          <select id="subcategory" name="subcategory" class="form-select" disabled></select>
+        </div>
+        <div class="mb-3">
+          <label for="subsubcategory" class="form-label">Alt Alt Kategori</label>
+          <select id="subsubcategory" name="subsubcategory" class="form-select" disabled></select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Renk</label>
+          <div id="colorFilters"></div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Beden</label>
+          <div id="sizeFilters"></div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Fiyat Aralığı (TRY)</label>
+          <input type="number" class="form-control mb-2" name="minPrice" placeholder="Min">
+          <input type="number" class="form-control" name="maxPrice" placeholder="Max">
+        </div>
+        <div class="d-flex gap-2">
+          <button type="submit" class="btn btn-primary">Filtrele</button>
+          <button type="button" id="clearFilters" class="btn btn-secondary">Temizle</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-9">
+      <div class="row" id="productList"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const categoryData = [{
+    "id": 1,
+    "name": "Men",
+    "subcategories": [
+      {
+        "id": 101,
+        "name": "T-Shirt",
+        "subsubcategories": ["Basic", "Oversize", "V Yaka", "Yuvarlak Yaka", "Polo Yaka"]
+      },
+      {
+        "id": 102,
+        "name": "Gömlek",
+        "subsubcategories": ["Slim Fit", "Regular Fit", "Desenli", "Klasik"]
+      },
+      {
+        "id": 103,
+        "name": "Sweatshirt / Hoodie",
+        "subsubcategories": ["Kapüşonlu", "Kapüşonsuz", "Oversize"]
+      },
+      {
+        "id": 104,
+        "name": "Pantolon",
+        "subsubcategories": ["Kargo", "Kot", "Chino", "Eşofman"]
+      },
+      {
+        "id": 105,
+        "name": "Şort",
+        "subsubcategories": ["Jean", "Keten", "Eşofman"]
+      },
+      {
+        "id": 106,
+        "name": "İç Giyim",
+        "subsubcategories": ["Boxer", "Slip", "Atlet"]
+      },
+      {
+        "id": 107,
+        "name": "Takım Elbise",
+        "subsubcategories": ["Ceket", "Pantolon", "Yelek"]
+      },
+      {
+        "id": 108,
+        "name": "Ayakkabı",
+        "subsubcategories": ["Spor Ayakkabı", "Klasik", "Bot", "Mokasen"]
+      },
+      {
+        "id": 109,
+        "name": "Aksesuar",
+        "subsubcategories": ["Şapka", "Kemer", "Saat", "Gözlük"]
+      },
+      {
+        "id": 110,
+        "name": "Spor Giyim",
+        "subsubcategories": ["Eşofman", "Forma", "Koşu Ayakkabısı"]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Women",
+    "subcategories": [
+      {
+        "id": 201,
+        "name": "Elbise",
+        "subsubcategories": ["Günlük", "Gece", "Yazlık", "Kışlık"]
+      },
+      {
+        "id": 202,
+        "name": "Tunik / Bluz",
+        "subsubcategories": ["Uzun Kollu", "Kısa Kollu", "Askılı"]
+      },
+      {
+        "id": 203,
+        "name": "Gömlek",
+        "subsubcategories": ["Desenli", "Düz", "İpek"]
+      },
+      {
+        "id": 204,
+        "name": "Sweatshirt / Hoodie",
+        "subsubcategories": ["Kapüşonlu", "Kapüşonsuz"]
+      },
+      {
+        "id": 205,
+        "name": "Ceket / Mont",
+        "subsubcategories": ["Deri", "Kot", "Kışlık", "Mevsimlik"]
+      },
+      {
+        "id": 206,
+        "name": "Etek",
+        "subsubcategories": ["Mini", "Midi", "Maksi"]
+      },
+      {
+        "id": 207,
+        "name": "Pantolon / Tayt",
+        "subsubcategories": ["Kot", "Derin Bel", "Yüksek Bel", "Spor"]
+      },
+      {
+        "id": 208,
+        "name": "İç Giyim",
+        "subsubcategories": ["Sütyen", "Külot", "Gecelik"]
+      },
+      {
+        "id": 209,
+        "name": "Tesettür Giyim",
+        "subsubcategories": ["Elbise", "Tunik", "Eşarp"]
+      },
+      {
+        "id": 210,
+        "name": "Büyük Beden",
+        "subsubcategories": ["Elbise", "Pantolon", "Bluz"]
+      },
+      {
+        "id": 211,
+        "name": "Aksesuar",
+        "subsubcategories": ["Çanta", "Şapka", "Takı"]
+      },
+      {
+        "id": 212,
+        "name": "Spor Giyim",
+        "subsubcategories": ["Eşofman", "Spor Sütyeni", "Koşu Ayakkabısı"]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Mom & Child",
+    "subcategories": [
+      {
+        "id": 301,
+        "name": "Bebek Giyim (0-24 ay)",
+        "subsubcategories": ["Body", "Tulüm", "Şapka", "Çorap"]
+      },
+      {
+        "id": 302,
+        "name": "Çocuk Giyim (2-14 yaş)",
+        "subsubcategories": ["T-Shirt", "Pantolon", "Elbise", "Mont"]
+      },
+      {
+        "id": 303,
+        "name": "Bebek Bakım Ürünleri",
+        "subsubcategories": ["Bebek Bezi", "Islak Mendil", "Losyon", "Şampuan"]
+      },
+      {
+        "id": 304,
+        "name": "Hamile Giyim",
+        "subsubcategories": ["Elbise", "Pantolon", "Tunik"]
+      },
+      {
+        "id": 305,
+        "name": "Oyuncaklar",
+        "subsubcategories": ["Eğitici", "Peluş", "Ahşap", "Araçlar"]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Home & Furniture",
+    "subcategories": [
+      {
+        "id": 401,
+        "name": "Mobilya",
+        "subsubcategories": ["Koltuk Takımı", "Yemek Masası", "Yatak", "Ofis Mobilyası"]
+      },
+      {
+        "id": 402,
+        "name": "Ev Tekstili",
+        "subsubcategories": ["Perde", "Halı", "Nevresim Takımı", "Yastık"]
+      },
+      {
+        "id": 403,
+        "name": "Dekorasyon",
+        "subsubcategories": ["Duvar Süsleri", "Vazolar", "Tablolar", "Aynalar"]
+      },
+      {
+        "id": 404,
+        "name": "Aydınlatma",
+        "subsubcategories": ["Avize", "Abajur", "Lambader", "Spot"]
+      },
+      {
+        "id": 405,
+        "name": "Mutfak Gereçleri",
+        "subsubcategories": ["Tencere Seti", "Bıçak Seti", "Çatal Kaşık Takımı", "Mutfak Aletleri"]
+      },
+      {
+        "id": 406,
+        "name": "Banyo Ürünleri",
+        "subsubcategories": ["Havlu", "Banyo Halısı", "Duş Perdesi", "Sabunluk"]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Supermarket",
+    "subcategories": [
+      {
+        "id": 501,
+        "name": "Gıda",
+        "subsubcategories": ["Bakliyat", "Çerez", "Konserve", "Atıştırmalık"]
+      },
+      {
+        "id": 502,
+        "name": "Temizlik Ürünleri",
+        "subsubcategories": ["Çamaşır Deterjanı", "Bulaşık Deterjanı", "Yer Temizleyici", "Mikrofiber Bez"]
+      },
+      {
+        "id": 503,
+        "name": "Kişisel Bakım",
+        "subsubcategories": ["Şampuan", "Duş Jeli", "Deodorant", "Diş Macunu"]
+      },
+      {
+        "id": 504,
+        "name": "Evcil Hayvan Ürünleri",
+        "subsubcategories": ["Mama", "Kum", "Oyuncak", "Taşıma Çantası"]
+      },
+      {
+        "id": 505,
+        "name": "Bebek Ürünleri",
+        "subsubcategories": ["Bebek Maması", "Biberon", "Emzik", "Bebek Arabası"]
+      },
+      {
+        "id": 506,
+        "name": "Organik Ürünler",
+        "subsubcategories": ["Organik Sebze", "Organik Meyve", "Organik Bakliyat"]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Cosmetics",
+    "subcategories": [
+      {
+        "id": 601,
+        "name": "Cilt Bakımı",
+        "subsubcategories": ["Nemlendirici", "Güneş Kremi", "Serum", "Peeling"]
+      },
+      {
+        "id": 602,
+        "name": "Makyaj",
+        "subsubcategories": ["Ruj", "Fondöten", "Maskara", "Allık"]
+      },
+      {
+        "id": 603,
+        "name": "Saç Bakımı",
+        "subsubcategories": ["Şampuan", "Saç Kremi", "Saç Maskesi", "Saç Spreyi"]
+      },
+      {
+        "id": 604,
+        "name": "Parfüm",
+        "subsubcategories": ["Kadın Parfümü", "Erkek Parfümü", "Unisex"]
+      },
+      {
+        "id": 605,
+        "name": "Erkek Bakım",
+        "subsubcategories": ["Tıraş Ürünleri", "Parfüm", "Cilt Bakımı"]
+      },
+      {
+        "id": 606,
+        "name": "Aletler",
+        "subsubcategories": ["Saç Kurutma Makinesi", "Düzleştirici", "Epilatör"]
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Bags",
+    "subcategories": [
+      {
+        "id": 701,
+        "name": "Kadın Çanta",
+        "subsubcategories": ["Omuz Çantası", "El Çantası", "Sırt Çantası"]
+      },
+      {
+        "id": 702,
+        "name": "Erkek Çanta",
+        "subsubcategories": ["Sırt Çantası", "Laptop Çantası", "Postacı Çantası"]
+      },
+      {
+        "id": 703,
+        "name": "Seyahat / Valiz",
+        "subsubcategories": ["Kabine Uygun", "Büyük Boy", "Orta Boy"]
+      },
+      {
+        "id": 704,
+        "name": "Cüzdan / Kartlık",
+        "subsubcategories": ["Deri", "Kumaş", "Metal"]
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Shoes",
+    "subcategories": [
+      {
+        "id": 801,
+        "name": "Kadın Ayakkabı",
+        "subsubcategories": ["Topuklu", "Düz Taban", "Spor", "Bot"]
+      },
+      {
+        "id": 802,
+        "name": "Erkek Ayakkabı",
+        "subsubcategories": ["Klasik", "Spor", "Bot"]
+      },
+      {
+        "id": 803,
+        "name": "Çocuk Ayakkabısı",
+        "subsubcategories": ["Spor", "Okul", "Günlük"]
+      },
+      {
+        "id": 804,
+        "name": "Outdoor Ayakkabı",
+        "subsubcategories": ["Trekking", "Koşu", "Su Geçirmez"]
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Electronics",
+    "subcategories": [
+      {
+        "id": 901,
+        "name": "Telefon & Aksesuar",
+        "subsubcategories": ["Telefon", "Kılıf", "Şarj Cihazı", "Kulaklık"]
+      },
+      {
+        "id": 902,
+        "name": "Bilgisayar & Tablet",
+        "subsubcategories": ["Dizüstü", "Masaüstü", "Tablet", "Monitör"]
+      },
+      {
+        "id": 903,
+        "name": "TV & Ses Sistemleri",
+        "subsubcategories": ["Televizyon", "Soundbar", "Hoparlör"]
+      },
+      {
+        "id": 904,
+        "name": "Akıllı Ev Sistemleri",
+        "subsubcategories": ["Güvenlik Kamerası", "Akıllı Ampul", "Akıllı Priz"]
+      },
+      {
+        "id": 905,
+        "name": "Beyaz Eşya",
+        "subsubcategories": ["Buzdolabı", "Çamaşır Makinesi", "Bulaşık Makinesi"]
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Sports & Outdoor",
+    "subcategories": [
+      {
+        "id": 1001,
+        "name": "Fitness",
+        "subsubcategories": ["Mat", "Ağırlık", "Giysi", "Aksesuar"]
+      },
+      {
+        "id": 1002,
+        "name": "Kamp",
+        "subsubcategories": ["Çadır", "Uyku Tulumu", "Aydınlatma", "Sırt Çantası"]
+      },
+      {
+        "id": 1003,
+        "name": "Bisiklet",
+        "subsubcategories": ["Dağ Bisikleti", "Yol Bisikleti", "Aksesuarlar"]
+      },
+      {
+        "id": 1004,
+        "name": "Outdoor Giyim",
+        "subsubcategories": ["Ceket", "Pantolon", "Ayakkabı"]
+      },
+      {
+        "id": 1005,
+        "name": "Top Sporları",
+        "subsubcategories": ["Futbol", "Basketbol", "Voleybol"]
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Books, Stationery & Hobby",
+    "subcategories": [
+      {
+        "id": 1101,
+        "name": "Kitap",
+        "subsubcategories": ["Roman", "Çocuk Kitapları", "Akademik", "Hobi"]
+      },
+      {
+        "id": 1102,
+        "name": "Kırtasiye",
+        "subsubcategories": ["Defter", "Kalem", "Dosya", "Ajanda"]
+      },
+      {
+        "id": 1103,
+        "name": "Hobi & Oyuncak",
+        "subsubcategories": ["Puzzle", "Model Araçlar", "Maket", "Boyama"]
+      }
+    ]
+  }]; // Buraya verdiğin uzun JSON kategorilerini yapıştır
+const products = [[
+  {
+    "id": 1001,
+    "name": "Kadın Günlük Elbise - Çiçek Desenli",
+    "description": "Yaz sezonuna özel hafif kumaştan üretilmiş, çiçek desenli günlük elbise.",
+    "price": 459.90,
+    "currency": "TRY",
+    "brand": "Florya",
+    "category": "Women",
+    "subcategory": "Elbise",
+    "subsubcategory": "Günlük",
+    "images": [
+      "/img/products/women/dress1-front.jpg",
+      "/img/products/women/dress1-back.jpg"
+    ],
+    "colors": ["Pembe", "Mavi", "Sarı"],
+    "sizes": ["S", "M", "L"],
+    "stock": 87,
+    "rating": 4.7,
+    "reviews": 24,
+    "discount": {
+      "active": true,
+      "percent": 15
+    },
+    "createdAt": "2025-07-10T09:00:00Z",
+    "updatedAt": "2025-07-20T10:15:00Z"
+  },
+  {
+    "id": 1002,
+    "name": "Erkek Oversize Sweatshirt - Siyah",
+    "description": "Günlük rahatlık için ideal, yumuşak iç yüzeye sahip oversize sweatshirt.",
+    "price": 329.90,
+    "currency": "TRY",
+    "brand": "UrbanStyle",
+    "category": "Men",
+    "subcategory": "Sweatshirt / Hoodie",
+    "subsubcategory": "Oversize",
+    "images": [
+      "/img/products/men/sweat1-front.jpg",
+      "/img/products/men/sweat1-back.jpg"
+    ],
+    "colors": ["Siyah", "Krem"],
+    "sizes": ["M", "L", "XL"],
+    "stock": 110,
+    "rating": 4.4,
+    "reviews": 19,
+    "discount": {
+      "active": false,
+      "percent": 0
+    },
+    "createdAt": "2025-07-12T15:00:00Z",
+    "updatedAt": "2025-07-21T11:00:00Z"
+  },
+  {
+    "id": 1003,
+    "name": "Hamile Giyim Elbise - Bordo",
+    "description": "Rahat kesimiyle gebelik döneminde konfor sağlayan mevsimlik elbise.",
+    "price": 399.00,
+    "currency": "TRY",
+    "brand": "MomFit",
+    "category": "Mom & Child",
+    "subcategory": "Hamile Giyim",
+    "subsubcategory": "Elbise",
+    "images": [
+      "/img/products/mom/maternity1.jpg"
+    ],
+    "colors": ["Bordo", "Lacivert"],
+    "sizes": ["S", "M", "L", "XL"],
+    "stock": 35,
+    "rating": 4.9,
+    "reviews": 31,
+    "discount": {
+      "active": true,
+      "percent": 10
+    },
+    "createdAt": "2025-07-18T12:30:00Z",
+    "updatedAt": "2025-07-21T09:45:00Z"
+  },
+  {
+    "id": 1004,
+    "name": "Outdoor Koşu Ayakkabısı - Su Geçirmez",
+    "description": "Zorlu hava koşullarına karşı dayanıklı, su geçirmez koşu ayakkabısı.",
+    "price": 749.00,
+    "currency": "TRY",
+    "brand": "TrailMaster",
+    "category": "Shoes",
+    "subcategory": "Outdoor Ayakkabı",
+    "subsubcategory": "Su Geçirmez",
+    "images": [
+      "/img/products/shoes/outdoor1.jpg"
+    ],
+    "colors": ["Siyah", "Haki"],
+    "sizes": ["40", "41", "42", "43", "44"],
+    "stock": 54,
+    "rating": 4.6,
+    "reviews": 16,
+    "discount": {
+      "active": false,
+      "percent": 0
+    },
+    "createdAt": "2025-07-05T08:00:00Z",
+    "updatedAt": "2025-07-19T17:00:00Z"
+  },
+  {
+    "id": 1005,
+    "name": "Ev Tekstili Nevresim Takımı - Çift Kişilik",
+    "description": "Yumuşak pamuk kumaşlı, çift kişilik nevresim takımı.",
+    "price": 299.90,
+    "currency": "TRY",
+    "brand": "HomeComfort",
+    "category": "Home & Furniture",
+    "subcategory": "Ev Tekstili",
+    "subsubcategory": "Nevresim Takımı",
+    "images": [
+      "/img/products/home/textile1.jpg"
+    ],
+    "colors": ["Beyaz", "Gri", "Lila"],
+    "sizes": ["Çift Kişilik"],
+    "stock": 78,
+    "rating": 4.2,
+    "reviews": 10,
+    "discount": {
+      "active": true,
+      "percent": 5
+    },
+    "createdAt": "2025-06-25T14:00:00Z",
+    "updatedAt": "2025-07-20T13:30:00Z"
+  },
+  {
+    "id": 1006,
+    "name": "Organik Sebze Paketi - 3kg",
+    "description": "Taze ve doğal üretimle hazırlanan 3 kg karışık organik sebze paketi.",
+    "price": 129.90,
+    "currency": "TRY",
+    "brand": "Organika",
+    "category": "Supermarket",
+    "subcategory": "Organik Ürünler",
+    "subsubcategory": "Organik Sebze",
+    "images": [
+      "/img/products/market/organic-veggies.jpg"
+    ],
+    "colors": [],
+    "sizes": [],
+    "stock": 100,
+    "rating": 4.9,
+    "reviews": 42,
+    "discount": {
+      "active": false,
+      "percent": 0
+    },
+    "createdAt": "2025-07-01T06:00:00Z",
+    "updatedAt": "2025-07-21T07:10:00Z"
+  },
+  {
+    "id": 1007,
+    "name": "Kadın Parfümü - Çiçeksi",
+    "description": "Hafif ve kalıcı çiçeksi kadın parfümü. Günlük kullanıma uygun.",
+    "price": 499.00,
+    "currency": "TRY",
+    "brand": "Fleur",
+    "category": "Cosmetics",
+    "subcategory": "Parfüm",
+    "subsubcategory": "Kadın Parfümü",
+    "images": [
+      "/img/products/cosmetics/perfume1.jpg"
+    ],
+    "colors": [],
+    "sizes": ["50ml", "100ml"],
+    "stock": 67,
+    "rating": 4.3,
+    "reviews": 22,
+    "discount": {
+      "active": true,
+      "percent": 20
+    },
+    "createdAt": "2025-06-30T11:00:00Z",
+    "updatedAt": "2025-07-20T15:00:00Z"
+  }
+]
+]; // Daha önce paylaştığın ürün JSON'u buraya gelecek
+
+// Form elemanları
+const categorySelect = document.getElementById('category');
+const subcategorySelect = document.getElementById('subcategory');
+const subsubcategorySelect = document.getElementById('subsubcategory');
+const colorFilters = document.getElementById('colorFilters');
+const sizeFilters = document.getElementById('sizeFilters');
+const productList = document.getElementById('productList');
+
+function populateCategories() {
+  categoryData.forEach(cat => {
+    const opt = document.createElement('option');
+    opt.value = cat.name;
+    opt.textContent = cat.name;
+    categorySelect.appendChild(opt);
+  });
+}
+
+function populateSubcategories(selectedCategory) {
+  subcategorySelect.innerHTML = '<option disabled selected>Seçiniz</option>';
+  subsubcategorySelect.innerHTML = '<option disabled selected>Seçiniz</option>';
+  subcategorySelect.disabled = true;
+  subsubcategorySelect.disabled = true;
+  const category = categoryData.find(cat => cat.name === selectedCategory);
+  if (category) {
+    category.subcategories.forEach(sub => {
+      const opt = document.createElement('option');
+      opt.value = sub.name;
+      opt.textContent = sub.name;
+      subcategorySelect.appendChild(opt);
+    });
+    subcategorySelect.disabled = false;
+  }
+}
+
+function populateSubsubcategories(selectedCategory, selectedSubcategory) {
+  subsubcategorySelect.innerHTML = '<option disabled selected>Seçiniz</option>';
+  subsubcategorySelect.disabled = true;
+  const category = categoryData.find(cat => cat.name === selectedCategory);
+  if (category) {
+    const subcat = category.subcategories.find(sub => sub.name === selectedSubcategory);
+    if (subcat) {
+      subcat.subsubcategories.forEach(subsub => {
+        const opt = document.createElement('option');
+        opt.value = subsub;
+        opt.textContent = subsub;
+        subsubcategorySelect.appendChild(opt);
+      });
+      subsubcategorySelect.disabled = false;
+    }
+  }
+}
+
+function populateCheckboxes(container, items, name) {
+  container.innerHTML = '';
+  items.forEach(val => {
+    const id = name + '_' + val;
+    container.innerHTML += `
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="${val}" name="${name}" id="${id}">
+        <label class="form-check-label" for="${id}">${val}</label>
+      </div>
+    `;
+  });
+}
+
+function displayProducts(filteredProducts) {
+  productList.innerHTML = '';
+  if (filteredProducts.length === 0) {
+    productList.innerHTML = '<p>Ürün bulunamadı.</p>';
+    return;
+  }
+  filteredProducts.forEach(prod => {
+    const oldPrice = prod.discount?.active ? `<span class="price-old me-2">${prod.price.toFixed(2)} ₺</span>` : '';
+    const finalPrice = prod.discount?.active ? prod.price * (1 - prod.discount.percent / 100) : prod.price;
+    productList.innerHTML += `
+      <div class="col-md-4">
+        <div class="product-card">
+          <img src="${prod.images[0]}" alt="${prod.name}"/>
+          <h5>${prod.name}</h5>
+          <p>${prod.description}</p>
+          <p><strong>${prod.brand}</strong></p>
+          <p>${oldPrice}<strong>${finalPrice.toFixed(2)} ₺</strong></p>
+          <p>Beden: ${prod.sizes.join(', ')}</p>
+          <p>Renk: ${prod.colors.join(', ')}</p>
+          <p>Stok: ${prod.stock} | Puan: ${prod.rating} (${prod.reviews} yorum)</p>
+        </div>
+      </div>
+    `;
+  });
+}
+
+function getFormValues(form) {
+  const formData = new FormData(form);
+  return Object.fromEntries(formData.entries());
+}
+
+function filterProducts(values) {
+  return products.filter(prod => {
+    if (values.category && prod.category !== values.category) return false;
+    if (values.subcategory && prod.subcategory !== values.subcategory) return false;
+    if (values.color && !prod.colors.includes(values.color)) return false;
+    if (values.size && !prod.sizes.includes(values.size)) return false;
+    if (values.minPrice && prod.price < +values.minPrice) return false;
+    if (values.maxPrice && prod.price > +values.maxPrice) return false;
+    return true;
+  });
+}
+
+categorySelect.addEventListener('change', e => {
+  populateSubcategories(e.target.value);
+});
+
+subcategorySelect.addEventListener('change', e => {
+  populateSubsubcategories(categorySelect.value, e.target.value);
+});
+
+document.getElementById('filterForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const values = getFormValues(e.target);
+  const filtered = filterProducts(values);
+  displayProducts(filtered);
+});
+
+document.getElementById('clearFilters').addEventListener('click', () => {
+  document.getElementById('filterForm').reset();
+  subcategorySelect.innerHTML = '';
+  subsubcategorySelect.innerHTML = '';
+  subcategorySelect.disabled = true;
+  subsubcategorySelect.disabled = true;
+  displayProducts(products);
+});
+
+// Init
+populateCategories();
+populateCheckboxes(colorFilters, ['Siyah','Beyaz','Gri','Kırmızı','Bej'], 'color');
+populateCheckboxes(sizeFilters, ['S','M','L','XL','36','37','38','39','40'], 'size');
+displayProducts(products);
+</script>
+</body>
+</html>

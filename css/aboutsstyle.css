@@ -1,0 +1,124 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;  /* yatay taşmayı engeller */
+  width: 100%;
+}
+.about-body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+}
+.about-body * {
+    font-family: "Montserrat" , sans-serif;
+    padding: 0;
+    margin:  0;
+    color: #000000;
+}
+.container, .content-section, .content p, .content h3 {
+  word-wrap: break-word;  /* veya */
+  overflow-wrap: break-word;
+}
+
+.section{
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #999999;
+    padding-top: 80px; /* navbar yüksekliği kadar */
+    margin: 0;
+}
+.container{
+    width: 80%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+.content-section{
+    flex: 1 1 500px;
+    min-width: 300px;
+    margin-bottom: 50px;
+}
+.image-section{
+    flex: 1 1 400px;
+    min-width: 250px;
+}
+.image-section img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    max-width: 100%;
+}
+.content-section .title{
+    text-transform: uppercase;
+    font-size: 20px;
+    text-align: center;
+    
+}
+.content-section .content h3{
+    margin-top:  20px;
+    font-size: 25px;
+    color: #000000;
+}
+.content-section .content p{
+    margin-top: 10px;
+    font-family: sans-serif;
+    font-size: 17px;
+    line-height: 1.5;
+}
+.scroll-fade {
+    transition: opacity 1.3s ease;
+}
+.content-section .content .button a{
+    background-color: #ffffff;
+    padding: 12px 24px;
+    color: black;
+    
+    letter-spacing: 1.5px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size:x-large;
+    font: bold;
+    
+}
+/* .content-section .content .button:hover{
+    border: 2px solid #FFD700;
+    background-color: black;
+    color: #FFD700;
+    
+}  */
+.content-section .content .button a:hover{
+    transition: 0.7s;
+    border: 4px solid #ffffff;
+    background-color: black;
+    color: #ffffff;
+    
+} 
+.content-section .content .button{
+    margin-top: 40px;
+    padding: 0px 10px;
+} 
+/* Mobilde font küçültmek için */
+@media (max-width: 320px) {
+  .content-section .content h3 {
+    font-size: 18px;  /* küçült */
+  }
+  .content-section .content p {
+    font-size: 14px;
+  }
+  .content-section .title h1 {
+    font-size: 20px;
+  }
+  
+  /* Container genişliği biraz artır */
+  .container {
+    width: 90%;
+    padding: 0 10px;
+  }
+}

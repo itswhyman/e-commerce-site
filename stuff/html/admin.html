@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="../css/adminstyle.css" />
+  
+</head>
+<body>
+
+  <div class="admin-header">
+    <h1>👋 Hoş Geldin Admin</h1>
+    <div>
+      <button id="accountBtn">👤 Hesabım</button>
+      <button id="logoutBtn">🚪 Çıkış Yap</button>
+    </div>
+  </div>
+
+  <div id="main-panel">
+    <p>Buradan ürünleri yönetebilirsin.</p>
+  </div>
+
+  <div id="account-section" class="hidden">
+    <h2>Hesap Bilgilerim</h2>
+    <button id="backToMainBtn" style="margin-bottom:15px;">🏠 Ana Sayfa</button>
+
+    <div class="profile-pic-container">
+      <img id="profilePic" src="img/default-user.jpg" alt="Profil Fotoğrafı" />
+      <input type="file" id="uploadPic" accept="image/*">
+    </div>
+
+    <form id="admin-form">
+      <label for="stuffNo">Personel No:</label>
+      <input type="text" id="stuffNo" readonly />
+
+      <label for="nameSurname">Ad Soyad:</label>
+      <input type="text" id="nameSurname" readonly />
+
+      <label for="email">E-posta:</label>
+      <input type="email" id="email" />
+
+      <label for="phone">Telefon:</label>
+      <input type="text" id="phone" />
+
+      <label for="birthDate">Doğum Tarihi:</label>
+      <input type="date" id="birthDate" readonly />
+
+      <label for="password">Şifre:</label>
+      <div class="password-wrapper">
+        <input type="password" id="password" />
+        <span id="togglePassword" class="toggle-password" title="Şifreyi Göster">&#128065;</span>
+      </div>
+
+      <button type="submit">Bilgileri Güncelle</button>
+    </form>
+  </div>
+
+  <script src="../script/admin.js"></script>
+
+</body>
+</html>

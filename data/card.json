@@ -1,0 +1,102 @@
+[
+  {
+    "title": "Nike",
+    "description": "Air Zoom Pegasus 39",
+    "gender": "men",
+    "imageUrl": "/foto/ayakkabi.webp",
+    "price": "120,00 €",
+    "colors": ["black","red","navy", "white"],
+    "sizes": ["38", "39", "40", "41", "42"],
+    "rating": 4.5
+  },
+  {
+    "title": "Adidas",
+    "description": "Ultraboost Light",
+    "gender": "women",
+    "imageUrl": "/foto/ayakkabi.webp",
+    "price": "140,00 €",
+    "colors": ["blue", "navy", "navy", "white"],
+    "sizes": ["40", "41", "42", "43", "42"],
+    "rating": 4.2
+  },
+  {
+    "title": "Puma",
+    "description": "RS-X Efekt",
+    "gender": "men",
+    "imageUrl": "/foto/ayakkabi.webp",
+    "price": "110,00 €",
+    "colors": ["red", "black", "grey"],
+    "sizes": ["39", "40", "41", "42"],
+    "rating": 3.8
+  },
+  {
+    "title": "New Balance",
+    "description": "Fresh Foam X",
+    "gender": "women",
+    "imageUrl": "/foto/ayakkabi.webp",
+    "price": "130,00 €",
+    "colors": ["purple", "white", "pink"],
+    "sizes": ["37", "38", "39", "40"],
+    "rating": 4.7
+  },
+  {
+    "title": "Reebok",
+    "description": "Nano X3",
+    "gender": "men",
+    "imageUrl": "/foto/ayakkabi.webp",
+    "price": "125,00 €",
+    "colors": ["grey", "black", "green"],
+    "sizes": ["41", "42", "43", "44"],
+    "rating": 4.0
+  },
+  {
+    "title": "Asics",
+    "description": "Gel-Kayano 30",
+    "gender": "women",
+    "imageUrl": "/foto/ayakkabi.webp",
+    "price": "135,00 €",
+    "colors": ["teal", "white", "navy"],
+    "sizes": ["38", "39", "40", "41"],
+    "rating": 4.3
+  },
+  {
+    "title": "Skechers",
+    "description": "Arch Fit",
+    "gender": "men",
+    "imageUrl": "/foto/ayakkabi.webp",
+    "price": "95,00 €",
+    "colors": ["black", "white", "blue"],
+    "sizes": ["40", "41", "42", "43"],
+    "rating": 3.6
+  },
+  {
+    "title": "Under Armour",
+    "description": "HOVR Sonic 5",
+    "gender": "women",
+    "imageUrl": "/foto/ayakkabi.webp",
+    "price": "115,00 €",
+    "colors": ["pink", "white", "silver"],
+    "sizes": ["37", "38", "39", "40"],
+    "rating": 4.1
+  },
+  {
+    "title": "Converse",
+    "description": "Chuck Taylor All Star",
+    "gender": "unisex",
+    "imageUrl": "/foto/ayakkabi.webp",
+    "price": "85,00 €",
+    "colors": ["white", "black", "red"],
+    "sizes": ["36", "37", "38", "39", "40"],
+    "rating": 4.4
+  },
+  {
+    "title": "Vans",
+    "description": "Old Skool",
+    "gender": "unisex",
+    "imageUrl": "/foto/ayakkabi.webp",
+    "price": "75,00 €",
+    "colors": ["black", "white", "green"],
+    "sizes": ["38", "39", "40", "41", "42"],
+    "rating": 3.9
+  }
+]

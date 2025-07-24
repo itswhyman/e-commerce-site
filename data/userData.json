@@ -1,0 +1,37 @@
+{
+  "userId": 1,
+  "username": "customer1",
+  "cart": [
+    {
+      "id": 101,
+      "name": "Elegant Dress",
+      "category": "Women",
+      "description": "A stylish and elegant summer dress.",
+      "price": 45.99,
+      "quantity": 1,
+      "image": "https://via.placeholder.com/120",
+      "rating": 3
+    },
+    {
+      "id": 102,
+      "name": "Luxury Perfume",
+      "category": "Cosmetics",
+      "description": "Long-lasting luxury fragrance.",
+      "price": 89.99,
+      "quantity": 2,
+      "image": "https://via.placeholder.com/120",
+      "rating": 4
+    }
+  ],
+  "favorites": [
+    {
+      "id": 201,
+      "name": "Sport Shoes",
+      "category": "Footwear",
+      "description": "Comfortable running shoes.",
+      "price": 120.00,
+      "image": "https://via.placeholder.com/120",
+      "rating": 5
+    }
+  ]
+}

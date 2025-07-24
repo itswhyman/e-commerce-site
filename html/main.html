@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X-Home</title>
+     <link rel="website icon"  type="png" href="../foto/logo2.png">  
+     <!-- ""../foto/logo.png" //! 
+      Bu yazımda ki `../` amaç: bulunduğun klasörden bir kez çık demek  -->  
+    <link rel="stylesheet" href="../style.css">   
+    <!--  "..\style.css" Üst satırdaki gibi-->
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/mainstyle.css">
+    <link rel="stylesheet" href="../css/info-bar.css">
+</head>
+<body style="height: auto;">
+      <div id="navbar-container"></div>
+      <div class="main-design">
+        <section class="slider">
+  <div class="slider-container" id="slider-container">
+    <!-- JS ile resimler gelecek -->
+  </div>
+  <div class="slider-arrow left" id="slider-prev">&#10094;</div> <!-- sol ok -->
+  <div class="slider-arrow right" id="slider-next">&#10095;</div> <!-- sağ ok -->
+</section>
+
+  <!-- Yeni Sezon -->
+  <section class="product-section">
+    <h2>Yeni Sezon Ürünler</h2>
+    <div id="season-products" class="product-grid"></div>
+  </section>
+
+  <!-- İndirimli Ürünler -->
+  <section class="product-section">
+    <h2>İndirimli Ürünler</h2>
+    <div id="discount-products" class="product-grid"></div>
+  </section>
+    </div>
+      
+
+    <div id="info-bar-container"></div>
+
+      <script src="../javascript/main.js"></script>
+      <script src="../javascript/homepage-view.js"></script>
+    <script src="../javascript/privacy-popup.js"></script>
+      <!-- Privacy Policy Popup -->
+<div id="privacyPopup" class="popup-overlay">
+  <div class="popup-content">
+    <h2>Gizlilik Politikası</h2>
+    <p>
+      Web sitemizi kullanarak çerez kullanımımızı ve kişisel verilerin işlenmesini kabul etmiş olursunuz. 
+      Detaylı bilgiye <a href="#">Gizlilik Politikası</a> sayfamızdan ulaşabilirsiniz.
+    </p>
+    <button id="acceptPrivacy">Kabul Ediyorum</button>
+  </div>
+</div>
+
+
+</body>
+</html>

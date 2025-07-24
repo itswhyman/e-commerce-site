@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../css/cartstyle.css" />
+  <link rel="stylesheet" href="../css/info-bar.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <div id="navbar-container"></div>
+  <div class="cartbody">
+    <div class="cart-container">
+    <div class="cart-items">
+      <h2>Shopping Cart</h2>
+      <a href="favorite.html" class="fav-btn" style="display:inline-block; margin-bottom:15px; text-decoration: none;">
+        <i class="fa-solid fa-heart"></i> Favorite
+      </a>
+      <div id="cart-items"></div>
+    </div>
+
+    <div class="cart-summary">
+      <h2>Summary</h2>
+      <div class="summary-box">
+        <div class="summary-item">
+          <span>Subtotal:</span>
+          <span id="subtotal">$0.00</span>
+        </div>
+        <div class="summary-item">
+          <span>Discount Code:</span>
+          <input type="text" placeholder="Enter coupon" id="coupon-input" />
+        </div>
+        <div class="summary-item total">
+          <strong>Total:</strong>
+          <strong id="total">$0.00</strong>
+        </div>
+        <button class="checkout-btn">Proceed to Checkout</button>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div id="info-bar-container" style="position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  z-index: 1000;"></div>
+  <script src="../javascript/cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,398 @@
+[
+  {
+    "id": 1,
+    "name": "Men",
+    "subcategories": [
+      {
+        "id": 101,
+        "name": "T-Shirt",
+        "subsubcategories": ["Basic", "Oversize", "V Neck", "Round Neck", "Polo Neck"]
+      },
+      {
+        "id": 102,
+        "name": "Shirt",
+        "subsubcategories": ["Slim Fit", "Regular Fit", "Patterned", "Classic"]
+      },
+      {
+        "id": 103,
+        "name": "Sweatshirt / Hoodie",
+        "subsubcategories": ["With Hood", "Without Hood", "Oversize"]
+      },
+      {
+        "id": 104,
+        "name": "Trousers",
+        "subsubcategories": ["Cargo", "Denim", "Chino", "Sweatpants"]
+      },
+      {
+        "id": 105,
+        "name": "Shorts",
+        "subsubcategories": ["Denim", "Linen", "Sweatpants"]
+      },
+      {
+        "id": 106,
+        "name": "Underwear",
+        "subsubcategories": ["Boxer", "Briefs", "Tank Top"]
+      },
+      {
+        "id": 107,
+        "name": "Suit",
+        "subsubcategories": ["Jacket", "Trousers", "Vest"]
+      },
+      {
+        "id": 108,
+        "name": "Shoes",
+        "subsubcategories": ["Sneakers", "Classic", "Boots", "Loafers"]
+      },
+      {
+        "id": 109,
+        "name": "Accessories",
+        "subsubcategories": ["Hat", "Belt", "Watch", "Glasses"]
+      },
+      {
+        "id": 110,
+        "name": "Sportswear",
+        "subsubcategories": ["Sweatpants", "Jersey", "Running Shoes"]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Women",
+    "subcategories": [
+      {
+        "id": 201,
+        "name": "Dress",
+        "subsubcategories": ["Casual", "Evening", "Summer", "Winter"]
+      },
+      {
+        "id": 202,
+        "name": "Tunic / Blouse",
+        "subsubcategories": ["Long Sleeve", "Short Sleeve", "Strappy"]
+      },
+      {
+        "id": 203,
+        "name": "Shirt",
+        "subsubcategories": ["Patterned", "Plain", "Silk"]
+      },
+      {
+        "id": 204,
+        "name": "Sweatshirt / Hoodie",
+        "subsubcategories": ["With Hood", "Without Hood"]
+      },
+      {
+        "id": 205,
+        "name": "Jacket / Coat",
+        "subsubcategories": ["Leather", "Denim", "Winter", "Seasonal"]
+      },
+      {
+        "id": 206,
+        "name": "Skirt",
+        "subsubcategories": ["Mini", "Midi", "Maxi"]
+      },
+      {
+        "id": 207,
+        "name": "Pants / Leggings",
+        "subsubcategories": ["Denim", "Low Waist", "High Waist", "Sports"]
+      },
+      {
+        "id": 208,
+        "name": "Underwear",
+        "subsubcategories": ["Bra", "Panties", "Nightwear"]
+      },
+      {
+        "id": 209,
+        "name": "Modest Wear",
+        "subsubcategories": ["Dress", "Tunic", "Scarf"]
+      },
+      {
+        "id": 210,
+        "name": "Plus Size",
+        "subsubcategories": ["Dress", "Pants", "Blouse"]
+      },
+      {
+        "id": 211,
+        "name": "Accessories",
+        "subsubcategories": ["Bag", "Hat", "Jewelry"]
+      },
+      {
+        "id": 212,
+        "name": "Sportswear",
+        "subsubcategories": ["Sweatpants", "Sports Bra", "Running Shoes"]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Mom & Child",
+    "subcategories": [
+      {
+        "id": 301,
+        "name": "Baby Clothing (0-24 months)",
+        "subsubcategories": ["Bodysuit", "Romper", "Hat", "Socks"]
+      },
+      {
+        "id": 302,
+        "name": "Kids Clothing (2-14 years)",
+        "subsubcategories": ["T-Shirt", "Trousers", "Dress", "Jacket"]
+      },
+      {
+        "id": 303,
+        "name": "Baby Care Products",
+        "subsubcategories": ["Diapers", "Wet Wipes", "Lotion", "Shampoo"]
+      },
+      {
+        "id": 304,
+        "name": "Maternity Wear",
+        "subsubcategories": ["Dress", "Trousers", "Tunic"]
+      },
+      {
+        "id": 305,
+        "name": "Toys",
+        "subsubcategories": ["Educational", "Plush", "Wooden", "Vehicles"]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Home & Furniture",
+    "subcategories": [
+      {
+        "id": 401,
+        "name": "Furniture",
+        "subsubcategories": ["Sofa Set", "Dining Table", "Bed", "Office Furniture"]
+      },
+      {
+        "id": 402,
+        "name": "Home Textiles",
+        "subsubcategories": ["Curtains", "Carpet", "Bedding Set", "Pillows"]
+      },
+      {
+        "id": 403,
+        "name": "Decoration",
+        "subsubcategories": ["Wall Decorations", "Vases", "Paintings", "Mirrors"]
+      },
+      {
+        "id": 404,
+        "name": "Lighting",
+        "subsubcategories": ["Chandelier", "Table Lamp", "Floor Lamp", "Spotlight"]
+      },
+      {
+        "id": 405,
+        "name": "Kitchenware",
+        "subsubcategories": ["Cookware Set", "Knife Set", "Cutlery Set", "Kitchen Appliances"]
+      },
+      {
+        "id": 406,
+        "name": "Bathroom Products",
+        "subsubcategories": ["Towel", "Bath Mat", "Shower Curtain", "Soap Dish"]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Supermarket",
+    "subcategories": [
+      {
+        "id": 501,
+        "name": "Food",
+        "subsubcategories": ["Legumes", "Nuts", "Canned Goods", "Snacks"]
+      },
+      {
+        "id": 502,
+        "name": "Cleaning Products",
+        "subsubcategories": ["Laundry Detergent", "Dishwashing Liquid", "Floor Cleaner", "Microfiber Cloth"]
+      },
+      {
+        "id": 503,
+        "name": "Personal Care",
+        "subsubcategories": ["Shampoo", "Body Wash", "Deodorant", "Toothpaste"]
+      },
+      {
+        "id": 504,
+        "name": "Pet Products",
+        "subsubcategories": ["Food", "Litter", "Toys", "Carriers"]
+      },
+      {
+        "id": 505,
+        "name": "Baby Products",
+        "subsubcategories": ["Baby Food", "Bottle", "Pacifier", "Stroller"]
+      },
+      {
+        "id": 506,
+        "name": "Organic Products",
+        "subsubcategories": ["Organic Vegetables", "Organic Fruits", "Organic Legumes"]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Cosmetics",
+    "subcategories": [
+      {
+        "id": 601,
+        "name": "Skin Care",
+        "subsubcategories": ["Moisturizer", "Sunscreen", "Serum", "Peeling"]
+      },
+      {
+        "id": 602,
+        "name": "Makeup",
+        "subsubcategories": ["Lipstick", "Foundation", "Mascara", "Blush"]
+      },
+      {
+        "id": 603,
+        "name": "Hair Care",
+        "subsubcategories": ["Shampoo", "Conditioner", "Hair Mask", "Hair Spray"]
+      },
+      {
+        "id": 604,
+        "name": "Perfume",
+        "subsubcategories": ["Women’s Perfume", "Men’s Perfume", "Unisex"]
+      },
+      {
+        "id": 605,
+        "name": "Men’s Care",
+        "subsubcategories": ["Shaving Products", "Perfume", "Skin Care"]
+      },
+      {
+        "id": 606,
+        "name": "Tools",
+        "subsubcategories": ["Hair Dryer", "Straightener", "Epilator"]
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Bags",
+    "subcategories": [
+      {
+        "id": 701,
+        "name": "Women’s Bags",
+        "subsubcategories": ["Shoulder Bag", "Handbag", "Backpack"]
+      },
+      {
+        "id": 702,
+        "name": "Men’s Bags",
+        "subsubcategories": ["Backpack", "Laptop Bag", "Messenger Bag"]
+      },
+      {
+        "id": 703,
+        "name": "Travel / Luggage",
+        "subsubcategories": ["Carry-On", "Large Size", "Medium Size"]
+      },
+      {
+        "id": 704,
+        "name": "Wallets / Cardholders",
+        "subsubcategories": ["Leather", "Fabric", "Metal"]
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Shoes",
+    "subcategories": [
+      {
+        "id": 801,
+        "name": "Women’s Shoes",
+        "subsubcategories": ["Heels", "Flat", "Sneakers", "Boots"]
+      },
+      {
+        "id": 802,
+        "name": "Men’s Shoes",
+        "subsubcategories": ["Classic", "Sneakers", "Boots"]
+      },
+      {
+        "id": 803,
+        "name": "Kids’ Shoes",
+        "subsubcategories": ["Sneakers", "School", "Everyday"]
+      },
+      {
+        "id": 804,
+        "name": "Outdoor Shoes",
+        "subsubcategories": ["Trekking", "Running", "Waterproof"]
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Electronics",
+    "subcategories": [
+      {
+        "id": 901,
+        "name": "Phone & Accessories",
+        "subsubcategories": ["Phone", "Case", "Charger", "Headphones"]
+      },
+      {
+        "id": 902,
+        "name": "Computer & Tablet",
+        "subsubcategories": ["Laptop", "Desktop", "Tablet", "Monitor"]
+      },
+      {
+        "id": 903,
+        "name": "TV & Audio Systems",
+        "subsubcategories": ["Television", "Soundbar", "Speaker"]
+      },
+      {
+        "id": 904,
+        "name": "Smart Home Systems",
+        "subsubcategories": ["Security Camera", "Smart Bulb", "Smart Plug"]
+      },
+      {
+        "id": 905,
+        "name": "White Goods",
+        "subsubcategories": ["Refrigerator", "Washing Machine", "Dishwasher"]
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Sports & Outdoor",
+    "subcategories": [
+      {
+        "id": 1001,
+        "name": "Fitness",
+        "subsubcategories": ["Mat", "Weights", "Clothing", "Accessories"]
+      },
+      {
+        "id": 1002,
+        "name": "Camping",
+        "subsubcategories": ["Tent", "Sleeping Bag", "Lighting", "Backpack"]
+      },
+      {
+        "id": 1003,
+        "name": "Bicycle",
+        "subsubcategories": ["Mountain Bike", "Road Bike", "Accessories"]
+      },
+      {
+        "id": 1004,
+        "name": "Outdoor Clothing",
+        "subsubcategories": ["Jacket", "Trousers", "Shoes"]
+      },
+      {
+        "id": 1005,
+        "name": "Ball Sports",
+        "subsubcategories": ["Football", "Basketball", "Volleyball"]
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Books, Stationery & Hobby",
+    "subcategories": [
+      {
+        "id": 1101,
+        "name": "Books",
+        "subsubcategories": ["Novels", "Children’s Books", "Academic", "Hobby"]
+      },
+      {
+        "id": 1102,
+        "name": "Stationery",
+        "subsubcategories": ["Notebook", "Pen", "Folder", "Planner"]
+      },
+      {
+        "id": 1103,
+        "name": "Hobby & Toys",
+        "subsubcategories": ["Puzzle", "Model Vehicles", "Models", "Painting"]
+      }
+    ]
+  }
+]

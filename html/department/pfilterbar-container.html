@@ -1,0 +1,78 @@
+<div class="filter-body">
+  <div class="filter-body-yatay-menu">
+    <div class="filter-yatay">
+      <div id="filterButton" title="Filtrele"><i class="fa-solid fa-filter"></i></div>
+        <div id="sortButton" title="Sırala"><i class="fa-solid fa-arrow-down-wide-short"></i></div>
+      </div>
+    </div>
+
+    <!-- Filtre Paneli -->
+    <div id="filterMenu" class="filter-menu">
+          <h3>Filtrele</h3>
+          <label for="kategori">Kategories</label>
+            <select id="kategori">
+                <option value="choose">Choose</option>
+                <option value="spor">Men</option>
+                <option value="giyim">Women</option>
+                <option value="home">Home & Furniture</option>
+                <option value="market">Supermarket</option>
+                <option value="cosmetics">Cosmetics</option>
+                <option value="bags">Bags</option>
+                <option value="ayakkabi">Shoes</option>
+                <option value="elektronik">Electronics</option>
+                <option value="spor">Sports & Outdoor</option>
+                <option value="kirtasiye">Books, Stationery & Hobby</option>
+            </select>
+        <label for="marka">Brand</label>
+            <select id="marka">
+                <option value="choose">Choose</option>
+                <option value="nike">Nike</option>
+                <option value="adidas">Adidas</option>
+                <option value="puma">Puma</option>
+            </select>
+        <label for="tur">Product Type</label>
+            <select id="tur">
+                <option value="choose">Choose</option>
+                <option value="ayakkabi">Shoes</option>
+                <option value="tshirt">T-shirt</option>
+                <option value="mont">Jacket</option>
+            </select>
+        <label for="size">Size</label>
+            <select id="size">
+                <option value="choose">Choose</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+            </select>
+        <label>Color</label>
+            <div class="color-options">
+                <span class="color-dot" style="background-color: red;"></span>
+                <span class="color-dot" style="background-color: blue;"></span>
+                <span class="color-dot" style="background-color: green;"></span>
+                <span class="color-dot" style="background-color: white; "></span>
+                <span class="color-dot" style="background-color: black;"></span>
+            </div>
+        <label>Price Range (€)</label>
+            <div style="display: flex; gap: 10px;">
+                <input type="number" id="priceMin" placeholder="Min" min="0"  title="Minimum price" />
+                <input type="number" id="priceMax" placeholder="Max" min="0" max="10000" step="0.01" title="Maximum price" />
+            </div>
+            <div class="filter-buttons-row">
+                <button id="applyFilterBtn">Apply Filter</button>
+                <button id="resetFilters">Reset Filters</button>
+            </div>
+    </div>
+
+    <!-- Sıralama Dropdown -->
+    <div class="sort-wrapper">
+      <div id="sortMenu" class="sort-menu">
+        <label for="sortSelect">Sort By</label>
+        <select id="sortSelect">
+          <option value="priceAsc">Price (Low to High)</option>
+          <option value="priceDesc">Price (High to Low)</option>
+          <option value="bestSeller">Best Sellers</option>
+        </select>
+        <button id="applySortBtn" class="filter-icon-button">Sort</button>
+      </div>
+    </div>
+  </div>

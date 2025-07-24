@@ -1,0 +1,141 @@
+.cartbody * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.cartbody {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #f4f6f9, #eef2f7);
+  padding: 2rem;
+  color: #333;
+}
+
+.cart-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.cart-items, .cart-summary {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.cart-items {
+  flex: 2;
+  min-width: 300px;
+}
+
+.cart-summary {
+  flex: 1;
+  min-width: 250px;
+  height: fit-content;
+}
+
+.cart-card {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #ddd;
+  align-items: center;
+}
+
+.card-img img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.card-info {
+  flex-grow: 1;
+}
+
+.card-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.card-info p {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.price, .quantity, .rating {
+  margin: 0.4rem 0;
+  font-size: 0.95rem;
+}
+
+.quantity input {
+  width: 60px;
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.remove-btn {
+  background-color: #e63946;
+  color: white;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.remove-btn:hover {
+  background-color: #c62828;
+}
+
+.summary-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.summary-item input {
+  padding: 0.5rem;
+  width: 60%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.summary-item.total {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.checkout-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.checkout-btn:hover {
+  background-color: #0056b3;
+}
+
+.rating i {
+  color: gold;
+  margin-right: 2px;
+  font-size: 1rem;
+}

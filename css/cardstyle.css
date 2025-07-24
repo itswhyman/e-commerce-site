@@ -1,0 +1,525 @@
+#card-container {
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    max-width: 1000px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3%;
+    justify-content: center;
+    margin: 0 auto;
+}
+.card{
+    position: relative;
+    width: 100%;
+    height: 350px;
+    flex-direction: column;
+    padding: 5px;
+    
+    border-radius: 20px;
+    transition: .4s;   
+    gap: 4px;
+    overflow: hidden;
+    background-color:  #00bfd813;;
+    transition: all 1s ease; 
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 40px;
+}
+.card:hover{
+    box-shadow: 0  7px 12px rgb(0, 0, 0);
+    transform: translateY(-5px);
+    border-color: rgb(202, 202, 202);
+    
+}
+.card .card-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+   margin-top: 0;
+  padding-top: 0;
+ 
+}
+
+.card .card-header h3 {
+  margin: 0;
+  flex: 1 1 auto;
+  color: black;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.card .card-header span {
+  margin-left: auto;
+  white-space: nowrap;
+  color: rgb(0, 0, 0);
+    background: linear-gradient(to right, rgba(195, 0, 255, 0.425), rgba(13, 0, 190, 0.692));
+  border: 1px solid black;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+.card .card-header p {
+  flex-basis: 100%;
+  margin-top: 6px;
+  color: rgb(0, 0, 0);
+  font-size: 13px;
+  font-weight: normal;
+}
+
+.card .card-img {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    border-radius: 15px;
+    overflow: hidden;
+    order: -1;
+}
+.card .card-img .img{
+      width: 100%;        /* Container’a tam oturur */
+  height: 100%;
+  object-fit: cover;
+    transition: 0.4s;
+    object-fit: cover;
+}
+.card:hover.card-img img{
+    transform: scale(1.06);
+}
+.card .card-img i{
+    cursor: pointer;
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    color:rgb(255, 255, 255);
+    background-color: #00000015;
+    padding: 6px;
+    border-radius: 6px;
+    transition: all 1s ease; 
+}
+.card .card-img i:hover{
+    background-color: #0000003f;
+    transition: 0.7s;
+    color: #ff0000;
+}
+.card .card-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    margin: 5px 0;
+}
+.card .card-details .price {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 16px;
+    color: #000;
+}
+.card .card-details .price p{
+    margin: 0;
+    font-size: 14px;
+}
+.card .card-details .price strong{
+    color: rgb(255, 0, 51);
+    font-size: 20px;
+    font-weight: bold;
+}
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  color: gold;
+  margin-top: 4px;
+  padding: 5px;
+}
+.rating .rating-value {
+  font-size: 12px;
+  color: #444;
+}
+.card .card-footer a{    
+    cursor: pointer;
+    width: 80px;
+    height: 20px;
+    font-size: 15px;
+    text-align:center;
+    text-decoration: none;
+    padding: 8px 8px;
+    border-radius: 15px;
+    background-color: #dfdfdf;
+    color: rgb(0, 0, 0);
+    white-space: nowrap; 
+    transition: all 1s ease; 
+} 
+.card .card-footer{
+     position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px; /* buton yüksekliği veya ihtiyaca göre */
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  
+  background-color: transparent; /* istersen arkaplan */
+  padding: 10px;
+  box-sizing: border-box;
+ 
+}
+.card .card-footer a:hover{
+    background-color: #000000;
+    transition: 0.7s;
+    border: 2px solid #000000;
+    color: #ffffff;
+    transform: translate(1s);
+}
+
+@media (max-width: 1050px) {
+    .card .card-img {
+  width: 100%;
+  height: 50%;
+}
+.card .card-img .img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+        #card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        max-width: 100%;
+        gap: 50px;
+        padding: 15px;
+        justify-items: start;   /* ✅ içerikleri sola yasla */
+        justify-content: start; /* ✅ grid'i sola yasla */
+        margin: 0;  
+    }
+    .card .card-footer {
+        display: flex;
+        justify-content: center; /* Tüm butonları container ortasına al */
+        align-items: center;
+        gap: 10px; /* Butonlar arası boşluk */
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .card .card-img {
+  width: 100%;
+  height: 50%;
+}
+.card .card-img .img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+  #card-container {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center; /* 👈 sola hizalama */
+  }
+
+  .card {
+    width: 100%;
+    height: 300px;
+    padding: 5px 5px;
+    
+  }
+  
+  .card .card-header h3 {
+    font-size: 12px;
+    height: 10px;
+  }
+
+  .card .card-header p {
+    font-size: 10px;
+  }
+
+  .card .card-header span {
+    font-size: 14px;
+    padding: 3px 6px;
+    top: 10px;
+    right: 8px;
+  }
+
+  .card .card-details .price p {
+    font-size: 15px;
+  }
+
+  .card .card-details .price strong {
+    font-size: 15px;
+  }
+
+  .colors div {
+    width: 15px;
+    height: 15px;
+  }
+
+  .card .card-sizes {
+    font-size: 8px;
+    
+    padding: 2px;
+    border-radius: 15px;
+    height: 18px; /* önce 20px'ti, küçülttüm */
+    padding: 1px 6px; /* biraz daha az padding */
+    margin-top: 5px; /* alt boşluğu küçülttüm */
+  }
+  .card .card-sizes:hover {
+    font-size: 8px;
+    padding: 2px;
+    
+  }
+
+  .card .card-sizes span {
+    font-size: 10px;
+    padding: 2px;
+    margin: 1px;
+  }
+
+  .card .card-footer {
+    height: 25px;
+    padding: 0;
+    gap: 3px;
+    padding-top: 5px; /* buton üstündeki boşluk azaltıldı */
+    padding-bottom: 10px;
+  }
+
+  .card .card-footer a {
+    width: 60px;
+    height: 15px;
+    font-size: 12px;
+    padding: 6px 6px;
+  }
+  .card .card-footer {
+  display: flex;
+  justify-content: center; /* Tüm butonları container ortasına al */
+  align-items: center;
+  gap: 10px; /* Butonlar arası boşluk */
+  
+}
+}
+
+@media (max-width: 555px) { 
+    .card .card-img {
+  width: 100%;
+  height: 50%;
+}
+.card .card-img .img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+  #card-container {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+    gap: 20px;
+    padding: 10px 20px 10px 10px; /* sağ padding 20px yaptım, soldan 10px */
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .card {
+    width: 100%;
+    height: auto;
+    /* ekstra sağ margin vererek daraltabilirsin */
+    margin-right: 10px; /* İstersen kaldırabilir ya da azaltabilirsin */
+    box-sizing: border-box;
+  }
+  .card .card-footer{
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 430px) {
+  #card-container {
+    grid-template-columns: repeat(auto-fit, minmax(151px, 1fr));
+    max-width: 100%;
+    padding: 8px;
+    padding-top: 20px;
+    gap: 10px;
+  }
+
+  .card {
+    width: 100%;
+    height: 310px;
+    padding: 5px;
+    margin: 5px auto;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .card .card-header h3 {
+    font-size: 11px;
+    margin: 2px 0;
+  }
+
+  .card .card-header p {
+    font-size: 9px;
+    margin: 2px 0;
+  }
+
+  .card .card-header span {
+    font-size: 12px;
+    padding: 2px 5px;
+    top: 8px;
+    right: 6px;
+  }
+
+  .card .card-details {
+    gap: 4px;
+    margin-top: 4px;
+  }
+
+  .card .card-details .price {
+    font-size: 13px;
+  }
+
+  .card .card-details .price p {
+    font-size: 11px;
+  }
+
+  .card .card-details .price strong {
+    font-size: 15px;
+  }
+
+  .colors div {
+    width: 12px;
+    height: 12px;
+  }
+
+  .card .card-sizes {
+    font-size: 8px;
+    height: 18px;
+    padding: 2px;
+    margin-top: 6px;
+  }
+
+  .card .card-sizes span {
+    font-size: 9px;
+    padding: 2px;
+    margin: 1px;
+  }
+
+  .card .card-footer {
+    height: 20px;
+    padding: 0;
+    gap: 2px;
+    margin-top: auto;
+  }
+
+  .card .card-footer a {
+    width: 55px;
+    height: 15px;
+    font-size: 10px;
+    
+  }
+  .card .card-footer {
+  display: flex;
+  justify-content: center; /* Tüm butonları container ortasına al */
+  align-items: center;
+  padding-bottom: 20px;
+}
+}
+
+@media (max-width: 322px) {
+    .card .card-img {
+  width: 100%;
+  height: 50%;
+}
+.card .card-img .img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+  #card-container {
+    display: grid;
+    grid-template-columns: 1fr; /* ✅ her satırda 1 kart */
+    max-width: 100%;
+    gap: 20px; /* daha az boşluk yeterli */
+    padding-top: 40px;
+    justify-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .card {
+    width: 95%;
+    height: 400px; /* Yüksekliği artırdım */
+    padding: 15px;
+    border-radius: 15px;
+    box-sizing: border-box;
+  }
+   .card .card-header h3 {
+    font-size: 16px;  /* Mevcut 12px'den büyütüldü */
+    font-weight: bold;
+  }
+  .card .card-header p {
+    font-size: 12px;  /* Mevcut 10px'den büyütüldü */
+  }
+   .card .card-details {
+    display: block; /* blok olarak bırak */
+    margin-top: 10px;
+  }
+   .card .card-details .price {
+    font-size: 16px;
+    margin-bottom: 10px; /* fiyat ile renkler arasında boşluk */
+  }
+  .card .card-header h3 {
+    font-size: 18px;        /* Başlık boyutu */
+  font-weight: 700;       /* Kalın yazı */
+  color: black;
+  margin-bottom: 4px;
+  }
+
+  .card .card-header p {
+    padding-top:  4px;
+    font-size: 14px;        /* Alt açıklama yazısı */
+  font-weight: 600;       /* Orta kalınlık */
+  color: rgb(0, 0, 0);
+  }
+
+  .card .card-header span {
+    font-size: 12px;
+    padding: 3px 6px;
+    top: 10px;
+    right: 8px;
+  }
+
+  .card .card-details .price p,
+  .card .card-details .price strong {
+    font-size: 16px;
+  }
+  .colors {
+    margin-top: 5px;
+    display: flex;
+    gap: 6px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .card .card-footer {
+  display: flex;
+  justify-content: center; /* Tüm butonları container ortasına al */
+  align-items: center;
+    padding-bottom: 30px;
+}
+
+  .card .card-footer a {
+    display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90px;
+  height: 35px;
+  font-size: 14px;
+  border-radius: 15px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  }
+}

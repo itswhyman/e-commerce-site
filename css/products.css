@@ -1,0 +1,96 @@
+.buyuk-body , body {
+  margin: 0;
+  padding: 0;
+  padding-top: 60px;
+  background-color: #c9d1e0;
+}
+
+ /*
+ products sayfasının altında 
+ bulunan sayfa atlama özelliği 
+ ve en alttaki infobarını içerir
+*/
+
+.page-down-item{
+  margin-top: 100px;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+/*############################# ara-body #########################*/
+.ara-body {
+  margin: 0;       /* margin-top kaldırıldı */
+  padding: 0 20px; /* istersen yatay padding */
+  height: 50px;    /* istersen yüksekliği sabit */
+}
+
+.ara-yatay-menu {
+  width: 100%;
+  
+}
+
+.yatay-menu::-webkit-scrollbar {
+  display: none;
+}
+
+.yatay-menu {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.yatay-menu button {
+  height: 50px;
+  min-width: 120px;
+  width: 30px;
+  flex-shrink: 0;
+  max-width: 100%;
+  color: #000000;
+  font-size: 12px;
+  font: bold;
+  border: 2px solid rgb(170, 170, 170);
+  border-radius: 1px;
+  transition: all 1s ease;
+   white-space: normal;
+}
+
+.yatay-menu button:hover {
+  transition: 1s;
+  font-size: 14px;
+  border: 2px solid #e7e7e7;
+  font: bold;
+  background-color: rgb(0, 0, 0);
+
+  transition: all 2s ease;
+  transform: scale(1.05);
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 50;
+  }
+  50% {
+    opacity: 0;
+    color: red;
+    background-color: #000000;
+  }
+}
+
+@media (max-width: 1050px) {
+  .yatay-menu {
+    display: flex;
+    justify-content: start;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+}

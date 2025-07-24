@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ürün Sıralama</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+      background: #f2f2f2;
+    }
+    select {
+      padding: 5px;
+      margin-bottom: 20px;
+    }
+    .product {
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-bottom: 10px;
+      background: #fff;
+      border-radius: 8px;
+    }
+    .product img {
+      max-width: 120px;
+      height: auto;
+    }
+    .old-price {
+      text-decoration: line-through;
+      color: red;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Ürün Sıralama</h2>
+
+  <label for="sortSelect">Sırala:</label>
+  <select id="sortSelect">
+    <option value="">Seçiniz</option>
+    <option value="priceAsc">Fiyata Göre Artan</option>
+    <option value="priceDesc">Fiyata Göre Azalan</option>
+    <option value="stockDesc">En Çok Satan</option>
+    <option value="stockAsc">En Az Satan</option>
+  </select>
+
+  <div id="productList"></div>
+
+  <script>
+    const products = [
+      {
+        name: "Nike Air Max",
+        description: "Koşu ayakkabısı",
+        brand: "Nike",
+        category: "Men",
+        price: 1500,
+        stock: 20,
+        discount: { active: true, percent: 10 },
+        images: ["https://via.placeholder.com/150"]
+      },
+      {
+        name: "Adidas Ultra Boost",
+        description: "Koşu ayakkabısı",
+        brand: "Adidas",
+        category: "Men",
+        price: 1800,
+        stock: 50,
+        discount: { active: false, percent: 0 },
+        images: ["https://via.placeholder.com/150"]
+      },
+      {
+        name: "Puma RS-X",
+        description: "Günlük spor ayakkabı",
+        brand: "Puma",
+        category: "Women",
+        price: 1200,
+        stock: 10,
+        discount: { active: true, percent: 20 },
+        images: ["https://via.placeholder.com/150"]
+      }
+    ];
+
+    function displayProducts(list) {
+      const productList = document.getElementById('productList');
+      productList.innerHTML = "";
+      list.forEach(p => {
+        const discounted = p.discount && p.discount.active;
+        const finalPrice = discounted ? (p.price * (1 - p.discount.percent / 100)).toFixed(2) : p.price.toFixed(2);
+        const oldPrice = discounted ? `<span class="old-price">${p.price.toFixed(2)} TL</span>` : "";
+        productList.innerHTML += `
+          <div class="product">
+            <img src="${p.images[0]}" alt="${p.name}">
+            <h3>${p.name}</h3>
+            <p>${p.description}</p>
+            <p>Marka: ${p.brand}</p>
+            <p>Fiyat: ${finalPrice} TL ${oldPrice}</p>
+            <p>Stok: ${p.stock}</p>
+          </div>
+        `;
+      });
+    }
+
+    const sortSelect = document.getElementById('sortSelect');
+    sortSelect.addEventListener('change', () => {
+      const sortType = sortSelect.value;
+      let sortedProducts = [...products];
+
+      switch(sortType) {
+        case 'priceAsc':
+          sortedProducts.sort((a, b) => {
+            const priceA = a.discount && a.discount.active ? a.price * (1 - a.discount.percent / 100) : a.price;
+            const priceB = b.discount && b.discount.active ? b.price * (1 - b.discount.percent / 100) : b.price;
+            return priceA - priceB;
+          });
+          break;
+        case 'priceDesc':
+          sortedProducts.sort((a, b) => {
+            const priceA = a.discount && a.discount.active ? a.price * (1 - a.discount.percent / 100) : a.price;
+            const priceB = b.discount && b.discount.active ? b.price * (1 - b.discount.percent / 100) : b.price;
+            return priceB - priceA;
+          });
+          break;
+        case 'stockDesc':
+          sortedProducts.sort((a, b) => b.stock - a.stock);
+          break;
+        case 'stockAsc':
+          sortedProducts.sort((a, b) => a.stock - b.stock);
+          break;
+      }
+
+      displayProducts(sortedProducts);
+    });
+
+    // Sayfa yüklenince ilk ürünler
+    window.onload = () => displayProducts(products);
+  </script>
+
+</body>
+</html>

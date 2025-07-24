@@ -1,0 +1,20 @@
+{
+  "slider": [
+    {"filename": "../img/slider1.jpg", "alt": "Slider Görsel 1"},
+    {"filename": "../img/slider2.jpg", "alt": "Slider Görsel 2"},
+    {"filename": "../img/slider3.jpg", "alt": "Slider Görsel 3"},
+    {"filename": "../img/slider4.jpg", "alt": "Slider Görsel 4"},
+    {"filename": "../img/slider5.jpg", "alt": "Slider Görsel 5"},
+    {"filename": "../img/slider6.jpg", "alt": "Slider Görsel 6"},
+    {"filename": "../img/slider7.jpg", "alt": "Slider Görsel 7"}
+  ],
+  "season": [
+    {"filename": "../img/season1.jpg", "alt": "Yeni Sezon 1"},
+    {"filename": "../img/season2.jpg", "alt": "Yeni Sezon 2"}
+  ],
+  "discount": [
+    {"filename": "../img/discount1.jpg", "alt": "İndirimli Ürün 1"},
+    {"filename": "../img/discount2.jpg", "alt": "İndirimli Ürün 2"},
+    {"filename": "../img/discount3.jpg", "alt": "İndirimli Ürün 3"}
+  ]
+}

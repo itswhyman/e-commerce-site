@@ -1,0 +1,35 @@
+/* info-bar.css */
+#info-bar-container{
+    overflow: hidden;
+    
+  z-index: 1000;
+}
+.info-bar {
+  width: 100%;
+  height: 150px;
+  background-color: #18b5c0;
+  padding: 15px 20px;
+  color: white;
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 14px;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+
+}
+
+.info-bar .info-section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.info-bar a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.info-bar a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,68 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(185, 185, 185) ;
+}
+* {
+    font-family: "Montserrat" , sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.signup-form{
+    width: 400px;
+    height: 300px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #e6e6e6;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.signup-form h1{
+    margin-top: 40px;
+    margin-bottom: 60px;
+    color: black;
+    font-size: 40px;
+}
+h1 img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+ul li {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+ul li img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    display: block;   
+}
+ul li:hover {
+    box-shadow: 0 4px 12px #000000; /* Gölge ile belirginlik */
+    transform: scale(1.05); /* Hafif büyütme */
+    transition: all 0.3s ease;
+}
+.info-message {
+  text-align: left;       /* Metni ortala */
+  font-size: 16px;          /* Yazı boyutu */
+  color: #000000;              /* Yazı rengi */
+  margin-top: 20px;         /* Üst boşluk */
+  padding: 10px 20px;       /* İç boşluk */
+  margin-left: 30px;        /* Yatay ortalama için */
+  margin-right: 30px;
+}

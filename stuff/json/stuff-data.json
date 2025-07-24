@@ -1,0 +1,26 @@
+[
+  {
+    "stuffNo": "0",
+    "nameSurname": "name",
+    "email": "mail@example.com",
+    "phone": "+900000000000",
+    "birthDate": "2000-01-01",
+    "password": "Password"
+  },
+  {
+    "stuffNo": "123456",
+    "nameSurname": "John Doe",
+    "email": "john.doe@example.com",
+    "phone": "+905551234567",
+    "birthDate": "2003-07-02",
+    "password": "Password123"
+  },
+  {
+    "stuffNo": "654321",
+    "nameSurname": "Jane Smith",
+    "email": "jane.smith@example.com",
+    "phone": "+905559876543",
+    "birthDate": "2000-01-01",
+    "password": "Secret456"
+  }
+]
