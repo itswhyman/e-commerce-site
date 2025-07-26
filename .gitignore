@@ -1,0 +1,6 @@
+# Windows sistem klasörleri ve gereksiz dosyalar
+AppData/
+*.log
+*.ini
+.DS_Store
+Thumbs.db
